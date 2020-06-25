@@ -11,14 +11,16 @@ function startGame() {
     switchDayStyles("night", document.getElementById("rootbody"));
 }
 
-function switchDayStyles(x, y) { // Must have daytime / nighttime declarations.
-    if(x == "day") {
-        y.classList.replace('nighttime', 'daytime');
-        return true
-    } else if(x == "night") {
-        y.classList.replace('daytime', 'nighttime');
-        return true
+function switchStylesheets(to) {
+    if(to == "night") {
+        console.log("Switching to night!")
+        document.getElementById("timeSpecificSheet").setAttribute("href", "nighttime.css")
+        return "Success!"
+    } else if(to == "day") {
+        console.log("Switching to day!")
+        document.getElementById("timeSpecificSheet").setAttribute("href", "daytime.css")
+        return "Success!"
     } else {
-        return false
+        console.error("Specified Switch is not valid! (f)switchStylesheets(to:)");
     }
 }

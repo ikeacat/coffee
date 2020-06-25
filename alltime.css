@@ -3,14 +3,6 @@
 .rootbody {
     transition: all 0.2s linear;
 }
-.rootbody.daytime {
-    color: black;
-    background-color: whitesmoke;
-}
-.rootbody.nighttime {
-    color: white;
-    background-color: #171717;
-}
 
 .rootdiv {
     transition: all 0.2s linear;
@@ -39,10 +31,4 @@
     border: transparent;
     border-radius: 10px;
 }
-.neubutton.nighttime {
-    background-color: whitesmoke;
-    color: black;
-}
-.neubutton.daytime {
-    background-color:
-}
+
