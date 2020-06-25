@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+.rootbody {
+    transition: all 0.2s linear;
+}
+.rootbody.daytime {
+    color: black;
+    background-color: whitesmoke;
+}
+.rootbody.nighttime {
+    color: white;
+    background-color: #171717;
+}
+
+.rootdiv {
+    transition: all 0.2s linear;
+}
+.rootdiv.initflex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.robotoReg {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-weight: 400;
+}
+
+.robotoBlack {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 900;
+}
+
+.coffeetitle {
+    font-size: 100px;
+}
+
+.neubutton {
+    border: transparent;
+    border-radius: 10px;
+}
+.neubutton.nighttime {
+    background-color: whitesmoke;
+    color: black;
+}
+.neubutton.daytime {
+    background-color:
+}
