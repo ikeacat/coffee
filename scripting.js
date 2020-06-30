@@ -1,5 +1,5 @@
 function sleepms(ms) {
-    return new Promise(resolve => setTimeout(resolve,ms))
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 async function sleeptest(ms) {
@@ -22,5 +22,31 @@ function switchStylesheets(to) {
         return "Success!"
     } else {
         console.error("Specified Switch is not valid! (f)switchStylesheets(to:)");
+    }
+}
+
+async function opacityIO(node, milliseconds, fadetype) {
+    if(node == null) {
+        console.error("No node specified to run function on.")
+        return;
+    }
+    if(milliseconds == null) {
+        milliseconds = 20
+        console.warn("No time specified. Defaulting to 20ms.")
+    }
+
+    var i;
+    for(i = 0; i != 101; i++) {
+        var b;
+        if(fadetype == "out") {
+            b = 100 - i
+        } else if(fadetype == "in") {
+            b = i
+        } else {
+            console.error("No Fadetype defined or its defined wrong. Use 'out' or 'in'.")
+        }
+
+        node.setAttribute("style", "opacity:" + b.toString() + "%;");
+        await sleepms(milliseconds)
     }
 }
