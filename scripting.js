@@ -1,5 +1,5 @@
 function sleepms(ms) {
-    return new Promise(resolve => setTimeout(resolve,ms))
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 async function sleeptest(ms) {
@@ -10,7 +10,7 @@ async function sleeptest(ms) {
 async function startGame() {
     switchStylesheets("day");
     await sleepms(1000);
-    opacityeffect(document.getElementById('rootdiv'), 1, "down");
+    opacityIO(document.getElementById('rootdiv'), 1, "down");
     document.getElementById('')
 }
 
@@ -28,18 +28,28 @@ function switchStylesheets(to) {
     }
 }
 
-async function opacityeffect(node, slow, way) {
-    var i;
-    var e;
-    for(i = 0; i < 101; i++) {
-        if(way == "down") {
-            e = 100 - i;
-        } else if(way == "up") {
-            e = i;
-        }
-        e = e.toString();
-        node.setAttribute('style', 'opacity:' + e + '%;')
-        await sleepms(slow)
+async function opacityIO(node, milliseconds, fadetype) {
+    if(node == null) {
+        console.error("No node specified to run function on.")
+        return;
     }
-    return;
+    if(milliseconds == null) {
+        milliseconds = 20
+        console.warn("No time specified. Defaulting to 20ms.")
+    }
+
+    var i;
+    for(i = 0; i != 101; i++) {
+        var b;
+        if(fadetype == "out") {
+            b = 100 - i
+        } else if(fadetype == "in") {
+            b = i
+        } else {
+            console.error("No Fadetype defined or its defined wrong. Use 'out' or 'in'.")
+        }
+
+        node.setAttribute("style", "opacity:" + b.toString() + "%;");
+        await sleepms(milliseconds)
+    }
 }

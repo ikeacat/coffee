@@ -31,9 +31,9 @@
     border: transparent;
     border-radius: 18px;
     padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
     transition: background-color 0.1s linear;
+    padding-left:20px;
+    padding-right:20px;
 }
 .neubutton:hover {
     background-color: blueviolet;
