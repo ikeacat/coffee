@@ -6,11 +6,14 @@
         <link href='alltime.css' rel='stylesheet' />
         <link href='nighttime.css' rel='stylesheet' id='timeSpecificSheet'/>
     </head>
-    <body class='rootbody daytime' id='rootbody'>
+    <body class='rootbody daytime' id='rootbody' onload="bodyLoad()">
         <script src='scripting.js'></script>
         <div id='rootdiv' class='rootdiv initflex robotoReg'>
             <h1 class='robotoBlack coffeetitle'>Coffee</h1>
             <button class='neubutton' onclick='startGame()'>Start New Game</button>
+            <div class='hsinfoblock'>
+                <i id='versnum'>vnull</i>
+            </div>
         </div>
     </body>
 </html>

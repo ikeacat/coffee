@@ -1,3 +1,5 @@
+const version = "1.0"
+
 function sleepms(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -5,6 +7,10 @@ function sleepms(ms) {
 async function sleeptest(ms) {
     await sleepms(ms);
     console.log("Test done.")
+}
+
+function bodyLoad() {
+    document.getElementById("versnum").innerHTML = "v" + version;
 }
 
 async function startGame() {

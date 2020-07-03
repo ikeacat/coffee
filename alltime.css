@@ -41,3 +41,7 @@
 .neubutton:active {
     background-color: darkmagenta;
 }
+
+.hsinfoblock {
+    margin-top: 15px;
+}
