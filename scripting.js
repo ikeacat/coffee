@@ -7,8 +7,11 @@ async function sleeptest(ms) {
     console.log("Test done.")
 }
 
-function startGame() {
-    switchDayStyles("night", document.getElementById("rootbody"));
+async function startGame() {
+    switchStylesheets("day");
+    await sleepms(1000);
+    opacityeffect(document.getElementById('rootdiv'), 1, "down");
+    document.getElementById('')
 }
 
 function switchStylesheets(to) {
@@ -23,4 +26,20 @@ function switchStylesheets(to) {
     } else {
         console.error("Specified Switch is not valid! (f)switchStylesheets(to:)");
     }
+}
+
+async function opacityeffect(node, slow, way) {
+    var i;
+    var e;
+    for(i = 0; i < 101; i++) {
+        if(way == "down") {
+            e = 100 - i;
+        } else if(way == "up") {
+            e = i;
+        }
+        e = e.toString();
+        node.setAttribute('style', 'opacity:' + e + '%;')
+        await sleepms(slow)
+    }
+    return;
 }
