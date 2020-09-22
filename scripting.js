@@ -16,8 +16,7 @@ function bodyLoad() {
 async function startGame() {
     switchStylesheets("day");
     await sleepms(1000);
-    opacityIO(document.getElementById('rootdiv'), 1, "down");
-    document.getElementById('')
+    opacityIO(document.getElementById('rootdiv'), 1, "out")
 }
 
 function switchStylesheets(to) {
