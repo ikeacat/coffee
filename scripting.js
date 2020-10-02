@@ -1,4 +1,5 @@
-var version = "1.0"
+var version = "Pre-Release Version"
+var vtype = "pr"
 
 function sleepms(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -9,8 +10,16 @@ async function sleeptest(ms) {
     console.log("Test done.")
 }
 
+function getVersion() {
+    if(vtype == "pr") {
+        return version;
+    } else {
+        return "v" + version;
+    }
+}
+
 function bodyLoad() {
-    document.getElementById("versnum").innerHTML = "v" + version;
+    document.getElementById("versnum").innerHTML = getVersion();
 }
 
 async function startGame() {
