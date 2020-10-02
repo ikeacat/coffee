@@ -13,6 +13,15 @@
     align-items: center;
 }
 
+.rootdiv.completecenter {
+    min-height: 99vh;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+}
+
 .robotoReg {
     font-family: "Roboto", "Arial", sans-serif;
     font-weight: 400;

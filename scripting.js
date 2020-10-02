@@ -1,4 +1,4 @@
-const version = "1.0"
+var version = "1.0"
 
 function sleepms(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -16,7 +16,12 @@ function bodyLoad() {
 async function startGame() {
     switchStylesheets("day");
     await sleepms(1000);
-    opacityIO(document.getElementById('rootdiv'), 1, "out")
+    await opacityIO(document.getElementById('rootdiv'), 1, "out")
+    await sleepms(150);
+    document.getElementById("rootdiv").innerHTML = "";
+    document.getElementById("rootdiv").classList.add("completecenter");
+    document.getElementById("rootdiv").innerHTML = "<p>test</p>"
+    await opacityIO(document.getElementById('rootdiv'), 1, "in");
 }
 
 function switchStylesheets(to) {
