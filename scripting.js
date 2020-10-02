@@ -44,8 +44,8 @@ async function opacityIO(node, milliseconds, fadetype) {
         return;
     }
     if(milliseconds == null) {
-        milliseconds = 20
-        console.warn("No time specified. Defaulting to 20ms.")
+        milliseconds = 1
+        console.warn("No time specified. Defaulting to 1ms.")
     }
 
     var i;
